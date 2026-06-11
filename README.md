@@ -17,6 +17,15 @@ L'aboutissement de cette synergie technique est directement mis au service du te
 Cet outil fournit :
 * **Aux équipes Risques & Direction :** Un suivi précis du ratio de solvabilité face aux scénarios macroéconomiques dégradés.
 * **Aux conseillers en agence :** Une **cartographie socio-démographique poussée**, leur permettant de comprendre instantanément le profil de risque d'un demandeur pour prendre des décisions d'octroi de crédit plus rapides, plus justes et sécurisées.
+---
+
+## 📊 Restitution Visuelle & Aide à la Décision
+
+Le tableau de bord interactif Looker Studio a été conçu pour restituer visuellement les analyses de risques aux décideurs et fournir une cartographie claire aux équipes en agence.
+
+Il combine le suivi du ratio de solvabilité (Stress Test), les scores prédictifs (Data Science) et les graphiques de corrélation de l'endettement (Data Analysis).
+
+🔗 [**Cliquez ici pour accéder au Dashboard Interactif RiskHorizon sur Looker Studio**](https://datastudio.google.com/s/qe0bhU5hUHM)
 
 ---
 
@@ -24,22 +33,22 @@ Cet outil fournit :
 
 ```text
 ├── data/
-│   ├── raw/                    # Données brutes (Demandes de crédit, profils)
-│   └── processed/              # Données nettoyées et agrégées
+│   ├── raw/                    # Données brutes
+│   ├── processed/              # Données nettoyées
+│   └── data_viz/               # Données finales pour la visualisation (à importer dans looker studio)
 │
 ├── sql/
-│   ├── schema.sql              # Structure de la base de données SQL
-│   └── aggregations.sql        # Requêtes de préparation et calcul des métriques (Data Analysis)
+│   ├── 2_Intermediate          # Script sql enrichissement
+│   └── 3_Mart                  # Script sql pour tables finales
 │
 ├── src/
 │   ├── python/
-│   │   ├── cleaning.py         # Script de nettoyage et prétraitement des données
-│   │   ├── modeling.py         # Script ML / Probabilité de défaut (Data Science)
-│   │   ├── stress_testing.py   # Module de simulation de scénarios de crise et impact fonds propres
-│   │   └── metrics.py          # Agrégation des métriques de performance et scoring
-│   └── requirements.txt        # Dépendances Python
+│   │   ├── cleaning            # Script de nettoyage et prétraitement des données
+│   │   ├── modeling            # Script ML / Probabilité de défaut (Data Science)
+│   │       ├── version_final
+│   │       ├── version_test
+│   │   └── metrics             # Agrégation des métriques de performance et scoring
 │
-├── visualization/
-│   └── looker/                 # Fichiers de configuration / Modèles Looker (LookML)
+├── visualization/              # Fichier pdf apercu looker studio              
 │
 └── README.md                   # Description et documentation du projet
