@@ -32,7 +32,7 @@ Il combine le suivi du ratio de solvabilité (Stress Test), les scores prédicti
 ## Structure du Projet
 
 ```text
-├── data/
+├── data/[**Cliquez ici pour accéder au repértoire Data**](https://drive.google.com/drive/folders/1duk6oTQRChXEz5RTzH2VG_PUhXkYoXen?usp=sharing)
 │   ├── raw/                    # Données brutes
 │   ├── processed/              # Données nettoyées
 │   └── data_viz/               # Données finales pour la visualisation (à importer dans looker studio)
